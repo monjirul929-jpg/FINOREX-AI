@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080d12">
+<title>FINOREX AI — M.MANJIRUL</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#080d12;color:#edf4f5;font-family:Arial,sans-serif}
+.wrap{max-width:480px;margin:auto;padding:22px 16px 36px}
+header{text-align:center;padding:16px 0 24px}
+.logo{font-size:30px;font-weight:900;letter-spacing:2px;color:#f5fbfc}
+.owner{color:#22d38a;font-size:17px;font-weight:800;letter-spacing:3px;margin-top:7px}
+.sub{font-size:11px;color:#80939a;letter-spacing:2px;margin-top:8px}
+.panel{background:#101a21;border:1px solid #20323a;border-radius:16px;padding:16px;margin:12px 0}
+label{display:block;color:#8fa5ac;font-size:12px;margin-bottom:8px}
+input{width:100%;padding:14px;border-radius:10px;border:1px solid #2b4149;background:#081117;color:white;font-size:16px;outline:none}
+.row{display:flex;gap:10px}.row>*{flex:1}
+.pill{background:#0b3026;color:#31e39a;border:1px solid #176b4d;padding:9px 12px;border-radius:9px;text-align:center;font-size:12px;font-weight:bold}
+.chart{height:190px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#0b151b,#0a1116);border-radius:12px;overflow:hidden;position:relative}
+.chart svg{width:100%;height:100%}
+.signal{text-align:center;padding:22px 10px}.signal .big{font-size:30px;font-weight:900;letter-spacing:2px;color:#d8e4e6}
+.signal p{font-size:12px;color:#8fa5ac;line-height:1.6}
+button{width:100%;padding:15px;border:0;border-radius:11px;background:#16bd7a;color:#04130d;font-size:15px;font-weight:900;margin-top:12px}
+.note{font-size:11px;color:#80939a;line-height:1.6;text-align:center;margin:18px 8px}
+footer{text-align:center;color:#5f747c;font-size:10px;margin-top:22px}
+</style>
+</head>
+<body><main class="wrap">
+<header><div class="logo">FINOREX AI</div><div class="owner">M.MANJIRUL</div><div class="sub">AI SIGNAL BOT · 1 MINUTE</div></header>
+<section class="panel">
+<label for="market">MARKET SEARCH</label>
+<input id="market" placeholder="যেমন: EUR/USD OTC" value="EUR/USD OTC">
+<div class="row" style="margin-top:12px"><div class="pill">TIMEFRAME · 1M</div><div class="pill">MODE · ANALYSIS</div></div>
+</section>
+<section class="panel">
+<label>LIVE CANDLE CHART</label>
+<div class="chart">
+<svg viewBox="0 0 400 190" preserveAspectRatio="none" aria-label="চার্ট সংযোগ না হওয়া পর্যন্ত নমুনা চার্ট">
+<g stroke="#1c3038" stroke-width="1"><path d="M0 38H400M0 76H400M0 114H400M0 152H400"/></g>
+<g stroke-width="3">
+<path stroke="#20d58a" d="M35 95V130M65 72V112M95 85V125M125 48V92M155 60V105M185 40V80M215 58V100M245 32V72M275 45V95M305 25V65M335 38V78M365 18V58"/>
+<path stroke="#20d58a" d="M35 102H35M65 88H65M95 104H95M125 68H125M155 82H155M185 60H185M215 80H215M245 52H245M275 72H275M305 44H305M335 58H335M365 38H365"/>
+</g>
+</svg>
+</div>
+<div class="note">এটি শুধু UI প্রিভিউ। লাইভ মার্কেট ডেটা যুক্ত হলে আসল চার্ট দেখাবে।</div>
+</section>
+<section class="panel signal">
+<div class="big" id="signal">WAITING</div>
+<p id="status">লাইভ ডেটা সংযোগের অপেক্ষায়<br>এখনো কোনো ট্রেড সিগন্যাল তৈরি হয়নি</p>
+<div class="pill">SIGNAL STATUS · NOT CONNECTED</div>
+</section>
+<button id="analyze">ANALYSIS CONNECTION REQUIRED</button>
+<div class="note">সতর্কতা: UP/DOWN পূর্বাভাস নিশ্চিত নয়। ডেটা সোর্স সংযুক্ত না হওয়া পর্যন্ত এই অ্যাপ কোনো বাস্তব ট্রেডিং সিগন্যাল দেয় না।</div>
+<footer>FINOREX AI © 2026 · M.MANJIRUL</footer>
+</main>
+<script>
+document.getElementById('analyze').addEventListener('click',()=>{
+ document.getElementById('status').textContent='লাইভ ডেটা API এখনো সংযুক্ত করা হয়নি। তাই নির্ভরযোগ্য বিশ্লেষণের জন্য ডেটা সংযোগ প্রয়োজন।';
+});
+</script></body></html>
